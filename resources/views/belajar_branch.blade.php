@@ -1,1 +1,1 @@
-Semangat sum belajarnyaa
+Semangat sum belajarnyaaaaaaaaa
