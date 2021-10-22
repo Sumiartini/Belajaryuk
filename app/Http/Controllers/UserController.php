@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Cache;
+use Yajra\DataTables\DataTables; // ditambahkan gara" error tidak ditemukan datatable, pelajari yaa!
 
 class UserController extends Controller
 {
     public function getAllUser()
     {
         $users =  User::all();
-        return view('users', compact("users"));
+        return view('belajar_server_side.users', compact("users"));
     }
 
     public function getAllUserServerSide()
@@ -31,6 +32,6 @@ class UserController extends Controller
 
     public function indexGetUser()
     {
-        return view("user_server_side");
+        return view("belajar_server_side.user_server_side");
     }
 }
