@@ -17,7 +17,9 @@ class CreateSkincaresTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->longText('ingredient');
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

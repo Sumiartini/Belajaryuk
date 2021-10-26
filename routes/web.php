@@ -28,10 +28,10 @@ Route::get('/brand-skincare/create','BrandSkincareController@create'); //menampi
 Route::get('/brand-skincare/{brandSkincare}','BrandSkincareController@show'); //menampilkan detail brand skincare
 Route::post('/brand-skincare','BrandSkincareController@store'); //menambahkan inputan data brand skincare
 
-Route::delete('/brand-skincare/{brandSkincare}','BrandSkincareController@destroy');
+Route::delete('/brand-skincare/{brandSkincare}','BrandSkincareController@destroy'); //menghapus data permanen
 
-Route::get('/brand-skincare/{brandSkincare}/edit','BrandSkincareController@edit');
-Route::put('/brand-skincare/{brandSkincare}','BrandSkincareController@update');
+Route::get('/brand-skincare/{brandSkincare}/edit','BrandSkincareController@edit'); // menampilkan halaman edit
+Route::put('/brand-skincare/{brandSkincare}','BrandSkincareController@update'); // mengedit data 
 
 // Route Datatables Server Side
 Route::get("users_server_side", "UserController@getAllUser");
