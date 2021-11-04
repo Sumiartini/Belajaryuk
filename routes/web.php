@@ -18,7 +18,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about','PagesController@about');
 
 // Route Skincare
-Route::get('/skincare','SkincareController@index');
+Route::get('/skincare','SkincareController@index'); //menampilkan daftar produk skincare beserta komposisinya
 
 // Route Brand Skincare
 Route::get('/brand-skincare','BrandSkincareController@index'); //menampilkan list brand skincare
