@@ -39,3 +39,6 @@ Route::get("users_server_side", "UserController@getAllUser");
 Route::get("users_server_side", "UserController@getAllUserServerSide")->name("user.data");
 Route::get("index_get_user", "UserController@indexGetUser");
 
+// Route kepribadian 
+Route::get("kepribadian", "KepribadianController@index");
+
