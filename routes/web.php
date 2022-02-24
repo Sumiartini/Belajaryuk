@@ -24,6 +24,10 @@ Route::get("users_server_side", "UserController@getAllUser");
 
 Route::get("users_server_side", "UserController@getAllUserServerSide")->name("user.data");
 Route::get("index_get_user", "UserController@indexGetUser");
-Auth::routes();
+Route::group(['middleware' => 'prevent-back-history','auth'],function(){
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});
