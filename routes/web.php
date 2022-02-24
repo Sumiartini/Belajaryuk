@@ -17,7 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('user/login', 'Auth\AdminAuthController@getLogin')->name('user.login');
+Route::post('user/login', 'Auth\AdminAuthController@postLogin');
+
 Route::get("users_server_side", "UserController@getAllUser");
 
 Route::get("users_server_side", "UserController@getAllUserServerSide")->name("user.data");
 Route::get("index_get_user", "UserController@indexGetUser");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
