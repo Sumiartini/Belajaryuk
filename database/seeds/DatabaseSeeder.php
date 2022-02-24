@@ -12,7 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
-        $this->call(SkincareSeeder::class);
-        $this->call(BrandSkincareSeeder::class);
+        // $this->call(SkincareSeeder::class);
+        // $this->call(BrandSkincareSeeder::class);
+        $this->call(KepribadianSeeder::class);
     }
 }

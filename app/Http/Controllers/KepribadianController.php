@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kepribadian;
 
 class KepribadianController extends Controller
 {
@@ -13,7 +14,8 @@ class KepribadianController extends Controller
      */
     public function index()
     {
-        return view ("kepribadian.index");
+        $kepribadian = Kepribadian::all(); 
+        return view ("kepribadian.index", compact('kepribadian'));
     }
 
     /**
@@ -23,7 +25,7 @@ class KepribadianController extends Controller
      */
     public function create()
     {
-        //
+        return view ("kepribadian.tambah-kepribadian");
     }
 
     /**
@@ -34,7 +36,9 @@ class KepribadianController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kepribadian::create($request->all());
+
+        return redirect ('/kepribadian');
     }
 
     /**
@@ -43,9 +47,9 @@ class KepribadianController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(kepribadian $ID)
     {
-        //
+        return view('kepribadian.show', compact('ID'));
     }
 
     /**
@@ -54,9 +58,9 @@ class KepribadianController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(kepribadian $ID)
     {
-        //
+        return view('kepribadian.edit', compact('ID'));
     }
 
     /**
@@ -68,7 +72,13 @@ class KepribadianController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request, $id);
+        Kepribadian::where('id', $request->id)
+                     ->update([
+                         'name' => $request->name,
+                         'description' => $request->description,
+                     ]);
+        return redirect ('/kepribadian');
     }
 
     /**
@@ -77,8 +87,9 @@ class KepribadianController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(kepribadian $ID)
     {
-        //
+        Kepribadian::destroy($ID->id);
+        return back();
     }
 }

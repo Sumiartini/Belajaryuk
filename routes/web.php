@@ -42,3 +42,12 @@ Route::get("index_get_user", "UserController@indexGetUser");
 // Route kepribadian 
 Route::get("kepribadian", "KepribadianController@index");
 
+Route::get("tambah-kepribadian", "KepribadianController@create");
+Route::post("kepribadian", "KepribadianController@store");
+
+Route::get("kepribadian/{ID}", "KepribadianController@show");
+
+Route::get("kepribadian/{ID}/edit", "KepribadianController@edit");
+Route::post("kepribadian/{ID}", "KepribadianController@update");
+
+Route::delete("kepribadian/{ID}", "KepribadianController@destroy");
