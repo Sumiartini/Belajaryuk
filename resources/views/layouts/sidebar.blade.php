@@ -8,10 +8,18 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="/list-menu" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
               <p>
-                Widgets
+                List Menu 
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/list-pesanan" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                List Pesanan 
               </p>
             </a>
           </li>

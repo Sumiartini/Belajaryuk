@@ -30,4 +30,13 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    //Warung Rindu
+    Route::get('/list-menu', 'WarungRinduController@index');
+
+    Route::get('/create-menu', 'WarungRinduController@create');
+
+    Route::get('/list-pesanan', 'WarungRinduController@pesanan');
+
+    Route::get('/create-pesanan', 'WarungRinduController@createpesanan');
+
 });
