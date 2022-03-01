@@ -39,4 +39,5 @@
               </form>
             </div>
             <!-- /.card -->
+</section>
 @endsection
