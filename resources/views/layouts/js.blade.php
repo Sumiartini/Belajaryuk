@@ -27,3 +27,65 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 
+<!-- Form Dinamis -->
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script> 
+
+<script id="document-template" type="text/x-handlebars-template">
+  <tr class="delete_add_more_item" id="delete_add_more_item">
+
+      <td>
+        <input type="text" name="task_name[]" value="@{{ task_name }}">
+      </td>
+      <td>
+        <input type="number" class="cost" name="cost[]" value="@{{ cost }}">
+      </td>
+  
+      <td>
+       <i class="removeaddmore" style="cursor:pointer;color:red;">Remove</i>
+      </td>
+
+  </tr>
+ </script>
+
+<script type="text/javascript">
+ 
+ $(document).on('click','#addMore',function(){
+    
+     $('.table').show();
+
+     var task_name = $("#task_name").val();
+     var cost = $("#cost").val();
+     var source = $("#document-template").html();
+     var template = Handlebars.compile(source);
+
+     var data = {
+        task_name: task_name,
+        cost: cost
+     }
+
+     var html = template(data);
+     $("#addRow").append(html)
+   
+     total_ammount_price();
+ });
+
+  $(document).on('click','.removeaddmore',function(event){
+    $(this).closest('.delete_add_more_item').remove();
+    total_ammount_price();
+  });
+
+  function total_ammount_price() {
+    var sum = 0;
+    $('.cost').each(function(){
+      var value = $(this).val();
+      if(value.length != 0)
+      {
+        sum += parseFloat(value);
+      }
+    });
+    $('#estimated_ammount').val(sum);
+  }
+                       
+</script>
