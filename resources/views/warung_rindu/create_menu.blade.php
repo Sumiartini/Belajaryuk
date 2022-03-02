@@ -15,6 +15,19 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
+                <label>Foto menu<span style="color:red"> *</span></label>
+                  <div class="form-group">
+
+                      <div class="col-sm-4">
+                          <img class="img-thumbnail" id="" style="object-fit: cover; height: 200px; width: 200px" />
+                          <input type="file"  name="" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
+                          @error('')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                          @enderror
+                      </div>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jenis</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Jenis">

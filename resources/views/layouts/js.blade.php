@@ -39,7 +39,9 @@
       <td>
         <input type="number" class="cost" name="cost[]" value="@{{ cost }}">
       </td>
-  
+      <td>
+        <input type="" class="cost" name="cost[]" value="@{{ cost }}">
+      </td>
       <td>
        <i class="removeaddmore" style="cursor:pointer;color:red;">Remove</i>
       </td>
