@@ -16,7 +16,6 @@
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th style="width: 20px">Kode</th>
                       <th>Jenis Potong</th>
                       <th style="width: 200px">Harga</th>
                       <th style="width: 20px">Aksi</th>
@@ -25,24 +24,7 @@
                   <tbody>
                     <tr>
                       <td>1.</td>
-                      <td>S</td>
                       <td>Sayap</td>
-                      <td>Rp. 7000<td>
-                        <a href="/create-pesanan" class="btn btn-success">Pesan</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>P</td>
-                      <td>Paha</td>
-                      <td>Rp. 7000<td>
-                        <a href="/create-pesanan" class="btn btn-success">Pesan</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>D</td>
-                      <td>Dada</td>
                       <td>Rp. 7000<td>
                         <a href="/create-pesanan" class="btn btn-success">Pesan</a>
                       </td>
