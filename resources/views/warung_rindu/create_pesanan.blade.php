@@ -15,22 +15,34 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Nama">
+                 
+                <div class="row"> 
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nama</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Nama">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Banyak Jenis</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Banyak Jenis">
+                </div>
+                <div class="row">  
+                  <div class="col-sm-6">
+                    <!-- select -->
+                    <div class="form-group">
+                      <label>Jenis Potong</label>
+                      <select class="form-control">
+                        <option>Sayap</option>
+                        <option>Paha</option>
+                        <option>Dada</option>
+                      </select>
+                    </div>
+                  </div>  
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Banyak Beli</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Banyak Beli">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis Potong</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Jenis Potong">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Banyak Beli</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Banyak Beli">
-                  </div>
+                </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
