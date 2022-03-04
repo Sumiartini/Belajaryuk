@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Tambah Menu')
+@section('title','Edit Menu')
 @section('content')
 <section class="content">
       <div class="container-fluid">
@@ -9,7 +9,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Menu</h3>
+                <h3 class="card-title">Edit Menu</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -20,7 +20,7 @@
 
                       <div class="col-sm-4">
                           <img class="img-thumbnail" id="" style="object-fit: cover; height: 200px; width: 200px" />
-                          <input type="file"  name="" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
+                          <input type="file" value="" name="" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
                           @error('')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
@@ -30,11 +30,11 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jenis</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Jenis">
+                    <input type="text" value="Dada" class="form-control" id="exampleInputPassword1" placeholder="Jenis">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Harga</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Harga">
+                    <input type="text" value="Rp. 15.000" class="form-control" id="exampleInputPassword1" placeholder="Harga">
                   </div>
                 <!-- /.card-body -->
 

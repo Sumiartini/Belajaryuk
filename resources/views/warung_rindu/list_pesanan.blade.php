@@ -16,24 +16,28 @@
                     <tr>
                       <th style="width: 10px" rowspan="2">#</th>
                       <th rowspan="2">Tanggal</th>
-                      <th colspan="4" class="text-center">Terjual</th>
+                      <th rowspan="2">Nama Pelanggan</th>
+                      <th colspan="2" class="text-center">Terjual</th>
+                      <th rowspan="2">Total</th>
                       <th rowspan="2">Aksi</th>
                     </tr>
                     <tr>
-                      <th>Dada</th>
-                      <th>Sayap</th>
-                      <th>Paha atas</th>
-                      <th>Paha bawah</th>
+                      <th>Jenis Potong</th>
+                      <th>Jumlah</th>
+
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1.</td>
                       <td>03/03/2022</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>2</td>
+                      <td>Sumi</td>
+                      <td>
+                        Dada <br>  
+                        Sayap
+                      </td>
+                      <td>10</td>
+                      <td>Rp. 150.000</td>
                       <td>
                         <a href="/detail-pesanan" class="btn btn-primary">Detail</a>
                       </td>

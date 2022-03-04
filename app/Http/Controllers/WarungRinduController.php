@@ -69,9 +69,9 @@ class WarungRinduController extends Controller
         return view ('warung_rindu.detail_pesanan');
     }
 
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('warung_rindu.edit_menu');
     }
 
     /**

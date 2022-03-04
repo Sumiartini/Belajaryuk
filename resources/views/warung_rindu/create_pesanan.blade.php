@@ -31,7 +31,8 @@
                         <label for="">Jenis Potong</label>
                         <select class="form-control">
                           <option>Sayap</option>
-                          <option>Paha</option>
+                          <option>Paha atas</option>
+                          <option>Paha bawah</option>
                           <option>Dada</option>
                         </select>
                     </div>

@@ -19,25 +19,6 @@ Route::get('/', function () {
     return view('beranda');
 })->name('task');
 
-Route::post('/',function(Request $request) {
-    
-    $request->validate([
-       'task_name' => 'required',
-       'cost' => 'required'
-    ]);
-    
-    $count = count($request->task_name);
-
-    for ($i=0; $i < $count; $i++) { 
-	  $task = new Task();
-	  $task->task_name = $request->task_name[$i];
-	  $task->cost = $request->cost[$i];
-	  $task->save();
-    }
-
-    return redirect()->back();
-});
-
 Route::get('user/login', 'Auth\AdminAuthController@getLogin')->name('user.login');
 Route::post('user/login', 'Auth\AdminAuthController@postLogin');
 
@@ -55,12 +36,39 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
     Route::get('/list-menu', 'WarungRinduController@index');
 
     Route::get('/create-menu', 'WarungRinduController@create');
+    Route::get('/edit-menu', 'WarungRinduController@edit');
 
     Route::get('/list-pesanan', 'WarungRinduController@pesanan');
 
     Route::get('/create-pesanan', 'WarungRinduController@createpesanan');
-
     Route::get('/detail-pesanan', 'WarungRinduController@showpesanan');
+    Route::get('/faktur-pesanan', 'WarungRinduController@fakturpesanan');//diskip dulu
 
+
+
+
+
+
+
+
+
+    Route::post('/',function(Request $request) {
+    
+        $request->validate([
+           'task_name' => 'required',
+           'cost' => 'required'
+        ]);
+        
+        $count = count($request->task_name);
+    
+        for ($i=0; $i < $count; $i++) { 
+          $task = new Task();
+          $task->task_name = $request->task_name[$i];
+          $task->cost = $request->cost[$i];
+          $task->save();
+        }
+    
+        return redirect()->back();
+    });
 });
 

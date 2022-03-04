@@ -25,7 +25,31 @@
                     <tr>
                       <td>1.</td>
                       <td>Sayap</td>
-                      <td>Rp. 7000</td>
+                      <td>Rp. 15.000</td>
+                      <td>
+                        <a href="/edit-menu" class="btn btn-success">Edit</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Dada</td>
+                      <td>Rp. 15.000</td>
+                      <td>
+                        <a href="/edit-menu" class="btn btn-success">Edit</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Paha atas</td>
+                      <td>Rp. 15.000</td>
+                      <td>
+                        <a href="/edit-menu" class="btn btn-success">Edit</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Paha bawah</td>
+                      <td>Rp. 15.000</td>
                       <td>
                         <a href="/edit-menu" class="btn btn-success">Edit</a>
                       </td>
