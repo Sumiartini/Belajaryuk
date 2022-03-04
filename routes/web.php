@@ -60,5 +60,7 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
 
     Route::get('/create-pesanan', 'WarungRinduController@createpesanan');
 
+    Route::get('/detail-pesanan', 'WarungRinduController@showpesanan');
+
 });
 

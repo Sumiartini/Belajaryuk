@@ -25,8 +25,9 @@
                     <tr>
                       <td>1.</td>
                       <td>Sayap</td>
-                      <td>Rp. 7000<td>
-                        <a href="/create-pesanan" class="btn btn-success">Pesan</a>
+                      <td>Rp. 7000</td>
+                      <td>
+                        <a href="/edit-menu" class="btn btn-success">Edit</a>
                       </td>
                     </tr>
                   </tbody>

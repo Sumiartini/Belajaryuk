@@ -64,6 +64,11 @@ class WarungRinduController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function showpesanan(){
+        return view ('warung_rindu.detail_pesanan');
+    }
+
     public function edit($id)
     {
         //

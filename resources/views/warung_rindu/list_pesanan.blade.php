@@ -14,20 +14,29 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Nama</th>
-                      <th>Banyak Jenis</th>
-                      <th>Jenis Potong</th>
-                      <th>Banyak Beli</th>
+                      <th style="width: 10px" rowspan="2">#</th>
+                      <th rowspan="2">Tanggal</th>
+                      <th colspan="4" class="text-center">Terjual</th>
+                      <th rowspan="2">Aksi</th>
+                    </tr>
+                    <tr>
+                      <th>Dada</th>
+                      <th>Sayap</th>
+                      <th>Paha atas</th>
+                      <th>Paha bawah</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1.</td>
-                      <td>udin</td>
+                      <td>03/03/2022</td>
                       <td>2</td>
-                      <td>dada dan paha</td>
+                      <td>1</td>
                       <td>2</td>
+                      <td>2</td>
+                      <td>
+                        <a href="/detail-pesanan" class="btn btn-primary">Detail</a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
