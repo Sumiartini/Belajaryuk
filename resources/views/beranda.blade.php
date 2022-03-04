@@ -114,7 +114,7 @@
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-txt">
                                                     <h4>{{ config('app.name', 'Laravel') }}</h4>
-													<h2>Chicken Thigh</h2>
+													<h2>Chicken Thighs</h2>
 													<p>
 														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiuiana smod tempor  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
 													</p>
@@ -358,7 +358,7 @@
 										</p>
 									</div>
 								</div>
-								<h4><a href="#">Chiken Breast</a></h4>
+								<h4><a href="#">Chicken Breast</a></h4>
 								<p class="arrival-product-price">Rp. 15.000</p>
 							</div>
 						</div>
