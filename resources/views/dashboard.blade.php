@@ -1,57 +1,74 @@
 @extends('layouts.master')
-
+@section('title','Dashboard')
 @section('content')
-<div class="container">
-      <div class="row">
-        <div class="col-md-2">
-            <label for="">Enter Task</label>
-            <input type="text" placeholder="Enter task" class="form-control form-control-sm" name="task_name"  id="task_name" value="">
-            <font style="color:red"> {{ $errors->has('task_name') ?  $errors->first('task_name') : '' }} </font>
+<!-- Main content -->
+<section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Bounce Rate</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65</h3>
+
+                <p>Unique Visitors</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
-        <div class="col-md-2">
-            <label for="">Enter Cost</label>
-            <input type="number" placeholder="Enter task" class="form-control form-control-sm" name="cost"  id="cost" value="">
-            <font style="color:red"> {{ $errors->has('cost') ?  $errors->first('cost') : '' }} </font>
-        </div>
-        <div class="col-md-2" style="margin-top:26px;">
-            <button id="addMore" class="btn btn-success btn-sm">Add More </button>
-        </div>
-     </div>
-     <div class="row" style="margin-top:26px;">
-    <div class="col-md-5">
-
-
-  <form action="{{ route('task') }}" method="post">
-    @csrf
-    
-    <table class="table table-sm table-bordered" style="display: none;">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Cost</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-
-    <tbody id="addRow" class="addRow">
-
-    </tbody>
-    <tbody>
-      <tr>
-        <td colspan="1" class="text-right">
-            <strong>Total:</strong> 
-        </td>
-        <td>
-            <input type="number" id="estimated_ammount" class="estimated_ammount" value="0" readonly>
-        </td>
-      </tr>
-    </tbody>
-
-    </table>
-   <button type="submit" class="btn btn-success btn-sm">Submit</button>
-  </form>
-
-    </div>
-  </div>
-</div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 @endsection
