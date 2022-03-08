@@ -20,9 +20,13 @@ class CreateOrdersTable extends Migration
             $table->integer('ord_customer_pay');
             $table->foreignId('ord_men_id')->references('men_id')->on('menu');
 
-            $table->foreignId('ord_created_by')->references('usr_id')->on('users')->nullable();
-            $table->foreignId('ord_updated_by')->references('usr_id')->on('users')->nullable();
-            $table->foreignId('ord_deleted_by')->references('usr_id')->on('users')->nullable();
+            $table->bigInteger('ord_created_by')->unsigned()->nullable();
+            $table->bigInteger('ord_updated_by')->unsigned()->nullable();
+            $table->bigInteger('ord_deleted_by')->unsigned()->nullable();
+
+            $table->foreign('ord_created_by')->references('id')->on('users');
+            $table->foreign('ord_updated_by')->references('id')->on('users');
+            $table->foreign('ord_deleted_by')->references('id')->on('users');
 
             $table->timestamp('ord_created_at')->nullable();
             $table->timestamp('ord_updated_at')->nullable();

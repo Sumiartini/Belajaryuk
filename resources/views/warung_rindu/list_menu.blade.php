@@ -19,45 +19,28 @@
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
+                      <th>Foto</th>
                       <th>Jenis Potong</th>
                       <th style="width: 200px">Harga</th>
                       <th style="width: 20px">Aksi</th>
                     </tr>
                   </thead>
+                  @php $no = 1; @endphp
+                  @foreach($menu as $a)
                   <tbody>
                     <tr>
-                      <td>1.</td>
-                      <td>Sayap</td>
-                      <td>Rp. 15.000</td>
+                      <td>{{$no++}}</td>
                       <td>
-                        <a href="/edit-menu" class="btn btn-success">Edit</a>
+                      <img src="{{$a->men_image}}" style="max-height: 4rem; max-width: 4rem;">
                       </td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Dada</td>
-                      <td>Rp. 15.000</td>
-                      <td>
-                        <a href="/edit-menu" class="btn btn-success">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Paha atas</td>
-                      <td>Rp. 15.000</td>
-                      <td>
-                        <a href="/edit-menu" class="btn btn-success">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Paha bawah</td>
-                      <td>Rp. 15.000</td>
+                      <td>{{$a->men_cut_type}}</td>
+                      <td>{{$a->men_price}}</td>
                       <td>
                         <a href="/edit-menu" class="btn btn-success">Edit</a>
                       </td>
                     </tr>
                   </tbody>
+                  @endforeach
                 </table>
               </div>
               <!-- /.card-body -->

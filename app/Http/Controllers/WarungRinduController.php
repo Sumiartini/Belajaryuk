@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Menu;
+use App\Order;
+
 
 use Illuminate\Http\Request;
 
@@ -13,7 +16,8 @@ class WarungRinduController extends Controller
      */
     public function index()
     {
-        return view ('warung_rindu.list_menu');
+        $menu = Menu::all();
+        return view ('warung_rindu.list_menu',compact('menu'));
     }
 
     /**

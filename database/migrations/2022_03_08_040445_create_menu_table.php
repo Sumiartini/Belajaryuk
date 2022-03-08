@@ -18,14 +18,15 @@ class CreateMenuTable extends Migration
             $table->string('men_image');
             $table->string('men_cut_type');
             $table->integer('men_price');
+            $table->integer('men_stock');
 
             $table->bigInteger('men_created_by')->unsigned()->nullable();
             $table->bigInteger('men_updated_by')->unsigned()->nullable();
             $table->bigInteger('men_deleted_by')->unsigned()->nullable();
 
-            $table->foreign('men_created_by')->references('usr_id')->on('users');
-            $table->foreign('men_updated_by')->references('usr_id')->on('users');
-            $table->foreign('men_deleted_by')->references('usr_id')->on('users');
+            $table->foreign('men_created_by')->references('id')->on('users');
+            $table->foreign('men_updated_by')->references('id')->on('users');
+            $table->foreign('men_deleted_by')->references('id')->on('users');
 
             $table->timestamp('men_created_at')->nullable();
             $table->timestamp('men_updated_at')->nullable();
