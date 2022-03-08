@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title','Daftar Menu')
+@section('breadcrumb')
+<li class="breadcrumb-item active">Daftar Menu</li>
+@endsection
 @section('content')
 <section class="content">
       <div class="container-fluid">

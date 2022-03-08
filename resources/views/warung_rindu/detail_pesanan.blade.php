@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title','Detail Pesanan')
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="/list-pesanan">Daftar Pesanan</a></li>
+<li class="breadcrumb-item active">Detail Pesanan</li>
+@endsection
 @section('content')
 <!-- Main content -->
 <section class="content">

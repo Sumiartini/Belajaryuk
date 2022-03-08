@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title','Dashboard')
+@section('breadcrumb')
+<li class="breadcrumb-item active">Dashboard</li>
+@endsection
 @section('content')
 <!-- Main content -->
 <section class="content">

@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title','Tambah Menu')
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="/list-menu">Daftar Menu</a></li>
+<li class="breadcrumb-item active">Tambah Menu</li>
+@endsection
 @section('content')
 <section class="content">
       <div class="container-fluid">

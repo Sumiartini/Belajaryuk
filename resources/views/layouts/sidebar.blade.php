@@ -19,7 +19,7 @@
             <a href="/list-menu" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
-                List Menu 
+                Menu 
               </p>
             </a>
           </li>
@@ -35,7 +35,7 @@
             <a href="/list-pesanan" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
-                List Pesanan 
+                Pesanan 
               </p>
             </a>
           </li>
