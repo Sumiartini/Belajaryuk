@@ -18,7 +18,7 @@ class CreateMenuTable extends Migration
             $table->string('men_image');
             $table->string('men_cut_type');
             $table->integer('men_price');
-            $table->integer('men_stock');
+            $table->integer('men_stock')->nullable();
 
             $table->bigInteger('men_created_by')->unsigned()->nullable();
             $table->bigInteger('men_updated_by')->unsigned()->nullable();

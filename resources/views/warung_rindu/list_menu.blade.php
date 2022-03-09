@@ -31,7 +31,7 @@
                     <tr>
                       <td>{{$no++}}</td>
                       <td>
-                      <img src="{{$a->men_image}}" style="max-height: 4rem; max-width: 4rem;">
+                      <img src="assets/images/chicken/{{$a->men_image}}" style="max-height: 4rem; max-width: 4rem;">
                       </td>
                       <td>{{$a->men_cut_type}}</td>
                       <td>{{$a->men_price}}</td>

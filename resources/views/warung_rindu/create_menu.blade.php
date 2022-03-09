@@ -17,14 +17,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="/create-menu" method="post">
+                @csrf
                 <div class="card-body">
                 <label>Foto menu<span style="color:red"> *</span></label>
                   <div class="form-group">
 
                       <div class="col-sm-4">
                           <img class="img-thumbnail" id="" style="object-fit: cover; height: 200px; width: 200px" />
-                          <input type="file"  name="" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
+                          <input type="file" required name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
                           @error('')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
@@ -33,12 +34,12 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Jenis">
+                    <label for="exampleInputPassword1">Jenis Potong<span style="color:red"> *</span></label>
+                    <input type="text" name="men_cut_type" class="form-control" id="exampleInputPassword1" placeholder="Jenis" required>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Harga</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Harga">
+                    <label for="exampleInputPassword1">Harga<span style="color:red"> *</span></label>
+                    <input type="text" name="men_price" class="form-control" id="exampleInputPassword1" placeholder="Harga" required>
                   </div>
                 <!-- /.card-body -->
 
