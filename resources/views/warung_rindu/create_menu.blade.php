@@ -24,8 +24,8 @@
                   <div class="form-group">
 
                       <div class="col-sm-4">
-                          <img class="img-thumbnail" id="" style="object-fit: cover; height: 200px; width: 200px" />
-                          <input type="file" required name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
+                          <img class="img-thumbnail" id="tampil_picture" style="object-fit: cover; height: 200px; width: 200px" />
+                          <input type="file" required name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('men_image').value=this.value" /><br>
                           @error('')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>

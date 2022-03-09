@@ -24,8 +24,8 @@
                   <div class="form-group">
 
                       <div class="col-sm-4">
-                          <img class="img-thumbnail" id="" style="object-fit: cover; height: 200px; width: 200px" />
-                          <input type="file" value="{{ $menu->men_image }}" name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('usr_profile_picture').value=this.value" /><br>
+                          <img src="{{ asset($menu->men_image) }}" class="img-thumbnail" id="tampil_picture" style="object-fit: cover; height: 200px; width: 200px" />
+                          <input type="file" name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('men_image').value=this.value" /><br>
                           @error('')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
@@ -34,11 +34,11 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis</label>
+                    <label for="exampleInputPassword1">Jenis Potong<span style="color:red"> *</span></label>
                     <input type="text" value="{{ $menu->men_cut_type }}" name="men_cut_type" class="form-control" id="exampleInputPassword1" placeholder="Jenis">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Harga</label>
+                    <label for="exampleInputPassword1">Harga<span style="color:red"> *</span></label>
                     <input type="text" value="{{ $menu->men_price }}" name="men_price" class="form-control" id="exampleInputPassword1" placeholder="Harga">
                   </div>
                 <!-- /.card-body -->
