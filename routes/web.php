@@ -19,18 +19,20 @@ Route::get('/', function () {
     return view('beranda');
 })->name('task');
 
-Route::get('user/login', 'Auth\AdminAuthController@getLogin')->name('user.login');
-Route::post('user/login', 'Auth\AdminAuthController@postLogin');
+Route::get('user/login', 'Auth\UserAuthController@getLogin');
+Route::post('user/login', 'Auth\UserAuthController@postLogin');
 
 Route::get("users_server_side", "UserController@getAllUser");
 
 Route::get("users_server_side", "UserController@getAllUserServerSide")->name("user.data");
 Route::get("index_get_user", "UserController@indexGetUser");
+
 Route::group(['middleware' => 'prevent-back-history','auth'],function(){
 
-	Auth::routes();
+    Auth::routes();
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/home', 'HomeController@index');
 
     //Warung Rindu
     Route::get('/list-menu', 'WarungRinduController@index');

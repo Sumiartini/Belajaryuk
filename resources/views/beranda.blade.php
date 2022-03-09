@@ -193,7 +193,7 @@
                                     
                                     @if (Route::has('login'))
                                             @auth
-                                               <li><a href="{{ url('/home') }}">Home</a></li>
+                                               <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                                             @else
                                                 <li><a href="{{ route('login') }}">Login</a></li>
 

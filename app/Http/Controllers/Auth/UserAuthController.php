@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserAuthController extends Controller
 {
-    use AuthenticatesUsers;
+    
     protected $maxAttempts = 3;
     protected $decayMinutes = 2;
     public function __construct()
@@ -16,7 +16,7 @@ class UserAuthController extends Controller
     }
     public function getLogin()
     {
-        return view('welcome');
+        return view('auth.login');
     }
     public function postLogin(Request $request)
     {
