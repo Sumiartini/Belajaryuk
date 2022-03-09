@@ -19,8 +19,9 @@ Route::get('/', function () {
     return view('beranda');
 })->name('task');
 
-Route::get('user/login', 'Auth\UserAuthController@getLogin');
-Route::post('user/login', 'Auth\UserAuthController@postLogin');
+// tidak dipakai
+// Route::get('user/login', 'Auth\UserAuthController@getLogin');
+// Route::post('user/login', 'Auth\UserAuthController@postLogin');
 
 Route::get("users_server_side", "UserController@getAllUser");
 
