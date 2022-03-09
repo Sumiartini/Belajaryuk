@@ -41,8 +41,8 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
     Route::get('/create-menu', 'WarungRinduController@create');
     Route::post('/create-menu', 'WarungRinduController@store');
 
-    Route::get('/edit-menu', 'WarungRinduController@edit');
-    Route::post('/edit-menu', 'WarungRinduController@update');
+    Route::get('/edit-menu/{menu}', 'WarungRinduController@edit');
+    Route::post('/edit-menu/{menu}', 'WarungRinduController@update');
 
     Route::get('/list-pesanan', 'WarungRinduController@pesanan');
 

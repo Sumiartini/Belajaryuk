@@ -90,9 +90,9 @@ class WarungRinduController extends Controller
         return view ('warung_rindu.detail_pesanan');
     }
 
-    public function edit()
+    public function edit(Menu $menu)
     {
-        return view('warung_rindu.edit_menu');
+        return view('warung_rindu.edit_menu', compact('menu'));
     }
 
     /**
@@ -102,9 +102,21 @@ class WarungRinduController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $menu)
     {
-        //
+        $validatedData = $request->validate([
+            'men_image' => 'required',
+            'men_cut_type' => 'required',
+            'men_price' => 'required',
+        ]);
+
+        Menu::find($menu)
+                     ->update([
+                        'men_image' => $request->men_image,
+                        'men_cut_type' => $request->men_cut_type,
+                        'men_price' => $request->men_price,
+                     ]);
+        return redirect ('/list-menu')->with('status','berhasil diubah');
     }
 
     /**

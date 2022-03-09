@@ -36,7 +36,7 @@
                       <td>{{$a->men_cut_type}}</td>
                       <td>{{$a->men_price}}</td>
                       <td>
-                        <a href="/edit-menu" class="btn btn-success">Edit</a>
+                        <a href="/edit-menu/{{$a->men_id}}" class="btn btn-success">Edit</a>
                       </td>
                     </tr>
                   </tbody>
