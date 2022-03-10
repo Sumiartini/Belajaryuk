@@ -15,13 +15,17 @@
                                 <h3 class="card-title">Detail Pesanan
                                 </h3>
                             </div>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach($pesanan as $a)
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4">
 
                                         <div class="row">
                                             <dt class="col-sm-6"> Nama Pelanggan </dt>
-                                            <dd class="col-sm-6"> Sumi </dd>
+                                            <dd class="col-sm-6"> {{$a->ord_customer_name}} </dd>
                                         </div>
                                     
                                     </div>
@@ -38,22 +42,15 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>dada</td>
-                                                    <td>5</td>
-                                                    <td>Rp. 15.000</td>
-                                                    <td>Rp. 75.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>sayap</td>
-                                                    <td>5</td>
-                                                    <td>Rp. 15.000</td>
-                                                    <td>Rp. 75.000</td>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$a->men_cut_type}}</td>
+                                                    <td>{{$a->ord_quantity}}</td>
+                                                    <td>Rp. {{$a->men_price}}</td>
+                                                    <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="4">Total </th>
-                                                    <td>Rp. 150.000</td>
+                                                    <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -61,6 +58,7 @@
                                     
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

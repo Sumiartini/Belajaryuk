@@ -8,7 +8,7 @@ class Order extends Model
 {
     protected $guarded = [];
 
-    protected $primaryKey = 'usr_id';
+    protected $primaryKey = 'ord_id';
 
     const CREATED_AT = 'ord_created_at';
     const UPDATED_AT = 'ord_updated_at';

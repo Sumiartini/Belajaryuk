@@ -51,7 +51,7 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
     Route::get('/list-pesanan/create', 'WarungRinduController@createpesanan');
     Route::post('/list-pesanan/create', 'WarungRinduController@storepesanan');
     
-    Route::get('/list-pesanan/{pesanan}', 'WarungRinduController@showpesanan');
+    Route::get('/list-pesanan/{order}', 'WarungRinduController@showpesanan');
     
 
 

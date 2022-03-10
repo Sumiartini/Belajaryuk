@@ -30,22 +30,26 @@
 
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>03/03/2022</td>
-                      <td>Sumi</td>
-                      <td>
-                        Dada <br>  
-                        Sayap
-                      </td>
-                      <td>10</td>
-                      <td>Rp. 150.000</td>
-                      <td>
-                        <a href="/list-pesanan/{pesanan}" class="btn btn-primary">Detail</a>
-                      </td>
-                    </tr>
-                  </tbody>
+                  @php
+                    $no = 1;
+                  @endphp
+                  @foreach($pesanan as $a)
+                    <tbody>
+                      <tr>
+                        <td>{{$no++}}</td>
+                        <td>{{$a->ord_created_at}}</td>
+                        <td>{{$a->ord_customer_name}}</td>
+                        <td>
+                          {{$a->men_cut_type}} 
+                        </td>
+                        <td>{{$a->ord_quantity}}</td>
+                        <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
+                        <td>
+                          <a href="/list-pesanan/{{$a->ord_id}}" class="btn btn-primary">Detail</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  @endforeach
                 </table>
               </div>
               <!-- /.card-body -->

@@ -71,12 +71,33 @@ class WarungRinduController extends Controller
      */
     public function pesanan()
     {
-        return view ('warung_rindu.list_pesanan');
+        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->get();
+        return view ('warung_rindu.list_pesanan', compact('pesanan'));
     }
 
     public function createpesanan()
     {
-        return view ('warung_rindu.create_pesanan');
+        $menu = Menu::select('men_id', 'men_cut_type')->get();
+        return view ('warung_rindu.create_pesanan', compact('menu'));
+    }
+
+    public function storepesanan(Request $request)
+    {
+        // dd($request);
+        $request->validate([
+            'ord_customer_name' => 'required',
+            'ord_men_id'   => 'required',
+            'ord_quantity' => 'required',
+        ]);
+            
+
+            $order = new Order;
+            $order->ord_customer_name = $request->ord_customer_name;
+            $order->ord_men_id = $request->ord_men_id;
+            $order->ord_quantity = $request->ord_quantity;
+            $order->save();
+            
+        return redirect ('/list-pesanan')->with('success','Menu Berhasil Ditambah.');
     }
 
     public function show($id)
@@ -91,12 +112,16 @@ class WarungRinduController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function showpesanan(){
-        return view ('warung_rindu.detail_pesanan');
+    public function showpesanan($id){
+        // dd($id);
+        Order::find($id);
+        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->get();
+        return view ('warung_rindu.detail_pesanan', compact('pesanan'));
     }
 
     public function edit(Menu $menu)
     {
+        // dd($menu);
         Menu::find($menu);
         return view('warung_rindu.edit_menu', compact('menu'));
     }
