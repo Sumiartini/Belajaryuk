@@ -24,7 +24,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/create-pesanan" class="nav-link">
+            <a href="/list-pesanan/create" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
                 Pesan

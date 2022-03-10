@@ -11,7 +11,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Menu</h3>
-                <a href="/create-menu" class="btn btn-primary float-right">Tambah</a>
+                <a href="/list-menu/create" class="btn btn-primary float-right">Tambah</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -36,7 +36,7 @@
                       <td>{{$a->men_cut_type}}</td>
                       <td>{{$a->men_price}}</td>
                       <td>
-                        <a href="/edit-menu/{{$a->men_id}}" class="btn btn-success">Edit</a>
+                        <a href="/list-menu/{{ $a->men_id }}/edit" class="btn btn-success">Edit</a>
                       </td>
                     </tr>
                   </tbody>

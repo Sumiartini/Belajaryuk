@@ -48,13 +48,18 @@ class WarungRinduController extends Controller
             'men_cut_type' => 'required',
             'men_price' => 'required',
         ]);
+
+        $nm = $request->men_image;
+        $namaFile = $nm->getClientOriginalName();
   
-        Menu::create([
-            'men_image' => $request->men_image,
-            'men_cut_type' => $request->men_cut_type,
-            'men_price' => $request->men_price,
-        ]);
-   
+            $dtUpload = new Menu;
+            $dtUpload->men_image = $namaFile;
+            $dtUpload->men_cut_type = $request->men_cut_type;
+            $dtUpload->men_price = $request->men_price;
+
+            $nm->move(public_path().'/assets'.'/images'.'/chicken', $namaFile);
+            $dtUpload->save();
+
         return redirect ('/list-menu')->with('success','Menu Berhasil Ditambah.');
     }
 
@@ -92,6 +97,7 @@ class WarungRinduController extends Controller
 
     public function edit(Menu $menu)
     {
+        Menu::find($menu);
         return view('warung_rindu.edit_menu', compact('menu'));
     }
 
@@ -105,17 +111,31 @@ class WarungRinduController extends Controller
     public function update(Request $request, $menu)
     {
         $validatedData = $request->validate([
-            'men_image' => 'required',
+
             'men_cut_type' => 'required',
             'men_price' => 'required',
         ]);
+        $ubah = Menu::find($menu);
+        $image = $request->men_image;
+        if($image)
+        {
+            
+            $dt = [
+                'men_image' => $request->men_image->getClientOriginalName(),
+                'men_cut_type' => $request['men_cut_type'],
+                'men_price' => $request['men_price'],
+            ];
+    
+            $request->men_image->move(public_path().'/assets'.'/images'.'/chicken', $image);
+            $ubah->update($dt);
+        }else{
+            $dt = [
+                'men_cut_type' => $request['men_cut_type'],
+                'men_price' => $request['men_price'],
+            ];
+            $ubah->update($dt);    
+        }
 
-        Menu::find($menu)
-                     ->update([
-                        'men_image' => $request->men_image,
-                        'men_cut_type' => $request->men_cut_type,
-                        'men_price' => $request->men_price,
-                     ]);
         return redirect ('/list-menu')->with('status','berhasil diubah');
     }
 

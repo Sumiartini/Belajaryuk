@@ -36,19 +36,23 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
     Route::get('/home', 'HomeController@index');
 
     //Warung Rindu
+    // Fitur Menu
     Route::get('/list-menu', 'WarungRinduController@index');
 
-    Route::get('/create-menu', 'WarungRinduController@create');
-    Route::post('/create-menu', 'WarungRinduController@store');
+    Route::get('/list-menu/create', 'WarungRinduController@create');
+    Route::post('/list-menu/create', 'WarungRinduController@store');
 
-    Route::get('/edit-menu/{menu}', 'WarungRinduController@edit');
-    Route::post('/edit-menu/{menu}', 'WarungRinduController@update');
+    Route::get('/list-menu/{menu}/edit', 'WarungRinduController@edit');
+    Route::post('/list-menu/{menu}/edit', 'WarungRinduController@update');
 
+    // Fitur Pesanan
     Route::get('/list-pesanan', 'WarungRinduController@pesanan');
 
-    Route::get('/create-pesanan', 'WarungRinduController@createpesanan');
-    Route::get('/detail-pesanan', 'WarungRinduController@showpesanan');
-    Route::get('/faktur-pesanan', 'WarungRinduController@fakturpesanan');//diskip dulu
+    Route::get('/list-pesanan/create', 'WarungRinduController@createpesanan');
+    Route::post('/list-pesanan/create', 'WarungRinduController@storepesanan');
+    
+    Route::get('/list-pesanan/{pesanan}', 'WarungRinduController@showpesanan');
+    
 
 
 

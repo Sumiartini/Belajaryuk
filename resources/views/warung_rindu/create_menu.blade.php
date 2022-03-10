@@ -17,7 +17,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/create-menu" method="post">
+              <form action="/list-menu/create" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                 <label>Foto menu<span style="color:red"> *</span></label>
@@ -34,12 +34,12 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis Potong<span style="color:red"> *</span></label>
-                    <input type="text" name="men_cut_type" class="form-control" id="exampleInputPassword1" placeholder="Jenis" required>
+                    <label>Jenis Potong<span style="color:red"> *</span></label>
+                    <input type="text" name="men_cut_type" class="form-control" id="" placeholder="Jenis" required>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Harga<span style="color:red"> *</span></label>
-                    <input type="text" name="men_price" class="form-control" id="exampleInputPassword1" placeholder="Harga" required>
+                    <label>Harga<span style="color:red"> *</span></label>
+                    <input type="text" name="men_price" class="form-control" id="" placeholder="Harga" required>
                   </div>
                 <!-- /.card-body -->
 

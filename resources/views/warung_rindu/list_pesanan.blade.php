@@ -42,7 +42,7 @@
                       <td>10</td>
                       <td>Rp. 150.000</td>
                       <td>
-                        <a href="/detail-pesanan" class="btn btn-primary">Detail</a>
+                        <a href="/list-pesanan/{pesanan}" class="btn btn-primary">Detail</a>
                       </td>
                     </tr>
                   </tbody>
