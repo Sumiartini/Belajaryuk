@@ -114,8 +114,10 @@ class WarungRinduController extends Controller
 
     public function showpesanan($id){
         // dd($id);
-        Order::find($id);
-        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->get();
+        
+        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->where('ord_id',$id)->get();
+        // dd($pesanan);
+        
         return view ('warung_rindu.detail_pesanan', compact('pesanan'));
     }
 
