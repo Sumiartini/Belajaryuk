@@ -73,7 +73,7 @@ class WarungRinduController extends Controller
     public function pesanan()
     {
         $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
-                        -> join('users','orders.ord_usr_id','=','users.id')
+                        ->join('users','orders.ord_usr_id','=','users.id')
                         ->get();
         return view ('warung_rindu.list_pesanan', compact('pesanan'));
     }
@@ -129,7 +129,7 @@ class WarungRinduController extends Controller
         
         $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
                         ->join('users','orders.ord_usr_id','=','users.id')
-                        ->where('ord_id',$id)
+                        ->where('ord_usr_id',$id)
                         ->get();
         // dd($pesanan);
         
