@@ -14,4 +14,6 @@ class Menu extends Model
     const CREATED_AT = 'men_created_at';
     const UPDATED_AT = 'men_updated_at';
     const DELETED_AT = 'men_deleted_at';
+
+    
 }

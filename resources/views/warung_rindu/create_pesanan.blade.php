@@ -25,7 +25,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="">Nama Pelanggan</label>
-                      <input type="text" name="name" class="form-control" id="" placeholder="Masukan Nama">
+                      <input type="text" name="cus_name" class="form-control" id="" placeholder="Masukan Nama">
                     </div>
                   </div>
                 </div>

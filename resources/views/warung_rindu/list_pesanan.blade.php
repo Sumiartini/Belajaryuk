@@ -18,17 +18,10 @@
                   <thead>
                     <tr>
                       <th style="width: 10px" rowspan="2">#</th>
-                      <th rowspan="2">Tanggal</th>
                       <th rowspan="2">Nama Pelanggan</th>
-                      <th colspan="2" class="text-center">Terjual</th>
-                      <th rowspan="2">Total</th>
                       <th rowspan="2">Aksi</th>
                     </tr>
-                    <tr>
-                      <th>Jenis Potong</th>
-                      <th>Jumlah</th>
-
-                    </tr>
+                    
                   </thead>
                   @php
                     $no = 1;
@@ -37,15 +30,9 @@
                     <tbody>
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$a->ord_created_at}}</td>
-                        <td>{{$a->name}}</td>
+                        <td>{{$a->cus_name}}</td>
                         <td>
-                          {{$a->men_cut_type}} 
-                        </td>
-                        <td>{{$a->ord_quantity}}</td>
-                        <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
-                        <td>
-                          <a href="/list-pesanan/{{$a->ord_id}}" class="btn btn-primary">Detail</a>
+                          <a href="/list-pesanan/{{$a->cus_id}}" class="btn btn-primary">Detail</a>
                         </td>
                       </tr>
                     </tbody>

@@ -18,14 +18,17 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach($pesanan as $a)
+                            
+                            
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4">
 
                                         <div class="row">
                                             <dt class="col-sm-6"> Nama Pelanggan </dt>
-                                            <dd class="col-sm-6"> {{$a->name}} </dd>
+                                            @foreach($pesanan as $a)
+                                            <dd class="col-sm-6"> {{$a->cus_name}} </dd>
+                                            @endforeach
                                         </div>
                                     
                                     </div>
@@ -41,24 +44,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($pesanan as $a)
+                                                @php
+                                                    $sub = $a->men_price*$a->ord_quantity;
+                                                @endphp
                                                 <tr>
                                                     <td>{{$no++}}</td>
                                                     <td>{{$a->men_cut_type}}</td>
                                                     <td>{{$a->ord_quantity}}</td>
                                                     <td>Rp. {{$a->men_price}}</td>
-                                                    <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
+                                                    <td>Rp. {{$sub}}</td>
                                                 </tr>
+                                                @endforeach
                                                 <tr>
                                                     <th colspan="4">Total </th>
-                                                    <td>Rp. {{$a->men_price*$a->ord_quantity}}</td>
+                                                    <td>Rp. {{$sub + $sub}}</td>
                                                 </tr>
                                             </tbody>
+                                            
                                         </table>
                                     </div>
                                     
                                 </div>
                             </div>
-                            @endforeach
+                            
                         </div>
                     </div>
                 </div>

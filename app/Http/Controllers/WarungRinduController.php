@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Menu;
 use App\Order;
 use App\User;
+use App\Customer;
 
 
 use Illuminate\Http\Request;
@@ -72,9 +73,7 @@ class WarungRinduController extends Controller
      */
     public function pesanan()
     {
-        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
-                        ->join('users','orders.ord_usr_id','=','users.id')
-                        ->get();
+        $pesanan = Customer::all();
         return view ('warung_rindu.list_pesanan', compact('pesanan'));
     }
 
@@ -87,21 +86,22 @@ class WarungRinduController extends Controller
     public function storepesanan(Request $request)
     {
         // dd($request);
-        // $request->validate([
-        //     'ord_customer_name' => 'required',
-        //     'ord_men_id'   => 'required',
-        //     'ord_quantity' => 'required',
-        // ]);
+        $request->validate([
+            'cus_name' => 'required',
+            'ord_men_id'   => 'required',
+            'ord_quantity' => 'required',
+        ]);
             
             $data = $request->all();
-            $customer = new User;
-            $customer->name = $data['name'];
+            $customer = new Customer;
+            $customer->cus_name = $data['cus_name'];
+            // dd($customer);
             $customer->save();
 
             if ($data['ord_men_id'] > 0){
                 foreach ($data['ord_men_id'] as $item => $value){
                     $data2 = array(
-                        'ord_usr_id' => $customer->id,
+                        'ord_cus_id' => $customer->cus_id,
                         'ord_men_id' => $data['ord_men_id'][$item],
                         'ord_quantity' => $data['ord_quantity'][$item],
                     );
@@ -126,10 +126,10 @@ class WarungRinduController extends Controller
 
     public function showpesanan($id){
         // dd($id);
-        
+        $pesanancek = Order::where('orders.ord_cus_id',$id)->first();
         $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
-                        ->join('users','orders.ord_usr_id','=','users.id')
-                        ->where('ord_usr_id',$id)
+                        ->join('customers','orders.ord_cus_id','=','customers.cus_id')
+                        ->where('orders.ord_cus_id',$id)
                         ->get();
         // dd($pesanan);
         
