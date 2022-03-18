@@ -25,7 +25,7 @@
 
                                         <div class="row">
                                             <dt class="col-sm-6"> Nama Pelanggan </dt>
-                                            <dd class="col-sm-6"> {{$a->ord_customer_name}} </dd>
+                                            <dd class="col-sm-6"> {{$a->name}} </dd>
                                         </div>
                                     
                                     </div>

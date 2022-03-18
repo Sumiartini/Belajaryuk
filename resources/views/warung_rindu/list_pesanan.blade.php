@@ -38,7 +38,7 @@
                       <tr>
                         <td>{{$no++}}</td>
                         <td>{{$a->ord_created_at}}</td>
-                        <td>{{$a->ord_customer_name}}</td>
+                        <td>{{$a->name}}</td>
                         <td>
                           {{$a->men_cut_type}} 
                         </td>

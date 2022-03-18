@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Menu;
 use App\Order;
+use App\User;
 
 
 use Illuminate\Http\Request;
@@ -71,7 +72,9 @@ class WarungRinduController extends Controller
      */
     public function pesanan()
     {
-        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->get();
+        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
+                        -> join('users','orders.ord_usr_id','=','users.id')
+                        ->get();
         return view ('warung_rindu.list_pesanan', compact('pesanan'));
     }
 
@@ -84,18 +87,27 @@ class WarungRinduController extends Controller
     public function storepesanan(Request $request)
     {
         // dd($request);
-        $request->validate([
-            'ord_customer_name' => 'required',
-            'ord_men_id'   => 'required',
-            'ord_quantity' => 'required',
-        ]);
+        // $request->validate([
+        //     'ord_customer_name' => 'required',
+        //     'ord_men_id'   => 'required',
+        //     'ord_quantity' => 'required',
+        // ]);
             
+            $data = $request->all();
+            $customer = new User;
+            $customer->name = $data['name'];
+            $customer->save();
 
-            $order = new Order;
-            $order->ord_customer_name = $request->ord_customer_name;
-            $order->ord_men_id = $request->ord_men_id;
-            $order->ord_quantity = $request->ord_quantity;
-            $order->save();
+            if ($data['ord_men_id'] > 0){
+                foreach ($data['ord_men_id'] as $item => $value){
+                    $data2 = array(
+                        'ord_usr_id' => $customer->id,
+                        'ord_men_id' => $data['ord_men_id'][$item],
+                        'ord_quantity' => $data['ord_quantity'][$item],
+                    );
+                    Order::create($data2);
+                }
+            }
             
         return redirect ('/list-pesanan')->with('success','Menu Berhasil Ditambah.');
     }
@@ -115,7 +127,10 @@ class WarungRinduController extends Controller
     public function showpesanan($id){
         // dd($id);
         
-        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')->where('ord_id',$id)->get();
+        $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
+                        ->join('users','orders.ord_usr_id','=','users.id')
+                        ->where('ord_id',$id)
+                        ->get();
         // dd($pesanan);
         
         return view ('warung_rindu.detail_pesanan', compact('pesanan'));
