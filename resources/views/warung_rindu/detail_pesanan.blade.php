@@ -58,7 +58,7 @@
                                                 @endforeach
                                                 <tr>
                                                     <th colspan="4">Total </th>
-                                                    <td>Rp. {{$sub + $sub}}</td>
+                                                    <td>Rp. {{$totalHarga}}</td>
                                                 </tr>
                                             </tbody>
                                             

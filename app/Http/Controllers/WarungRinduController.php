@@ -5,6 +5,8 @@ use App\Menu;
 use App\Order;
 use App\User;
 use App\Customer;
+use DB;
+
 
 
 use Illuminate\Http\Request;
@@ -133,8 +135,12 @@ class WarungRinduController extends Controller
                         ->where('orders.ord_cus_id',$id)
                         ->get();
         // dd($pesanan);
+        $totalHarga = Order::join('menu','orders.ord_men_id','=','menu.men_id')
+                        ->where('orders.ord_cus_id',$id)
+                        ->sum(DB::raw('ord_quantity * men_price'));
+        // dd($totalHarga);
         
-        return view ('warung_rindu.detail_pesanan', compact('pesanan','customer'));
+        return view ('warung_rindu.detail_pesanan', compact('pesanan','customer','totalHarga'));
     }
 
     public function edit(Menu $menu)
