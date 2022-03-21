@@ -126,14 +126,15 @@ class WarungRinduController extends Controller
 
     public function showpesanan($id){
         // dd($id);
+        $customer = Customer::where('cus_id',$id)->get();
         $pesanancek = Order::where('orders.ord_cus_id',$id)->first();
         $pesanan = Order::join('menu','orders.ord_men_id','=','menu.men_id')
-                        ->join('customers','orders.ord_cus_id','=','customers.cus_id')
+
                         ->where('orders.ord_cus_id',$id)
                         ->get();
         // dd($pesanan);
         
-        return view ('warung_rindu.detail_pesanan', compact('pesanan'));
+        return view ('warung_rindu.detail_pesanan', compact('pesanan','customer'));
     }
 
     public function edit(Menu $menu)

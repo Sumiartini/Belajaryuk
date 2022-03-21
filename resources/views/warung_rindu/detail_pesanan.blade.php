@@ -26,7 +26,7 @@
 
                                         <div class="row">
                                             <dt class="col-sm-6"> Nama Pelanggan </dt>
-                                            @foreach($pesanan as $a)
+                                            @foreach($customer as $a)
                                             <dd class="col-sm-6"> {{$a->cus_name}} </dd>
                                             @endforeach
                                         </div>
