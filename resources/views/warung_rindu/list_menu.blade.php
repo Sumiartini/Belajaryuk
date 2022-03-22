@@ -22,6 +22,7 @@
                       <th>Foto</th>
                       <th>Jenis Potong</th>
                       <th style="width: 200px">Harga</th>
+                      <th style="width: 200px">Stok</th>
                       <th style="width: 20px">Aksi</th>
                     </tr>
                   </thead>
@@ -35,6 +36,7 @@
                       </td>
                       <td>{{$a->men_cut_type}}</td>
                       <td>{{$a->men_price}}</td>
+                      <td>{{$a->men_stock}}</td>
                       <td>
                         <a href="/list-menu/{{ $a->men_id }}/edit" class="btn btn-success">Edit</a>
                       </td>

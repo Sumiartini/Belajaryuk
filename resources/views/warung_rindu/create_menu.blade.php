@@ -20,7 +20,7 @@
               <form action="/list-menu/create" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                <label>Foto menu<span style="color:red"> *</span></label>
+                  <label>Foto menu<span style="color:red"> *</span></label>
                   <div class="form-group">
 
                       <div class="col-sm-4">
@@ -33,18 +33,26 @@
                           @enderror
                       </div>
                   </div>
-                  <div class="form-group">
-                    <label>Jenis Potong<span style="color:red"> *</span></label>
-                    <input type="text" name="men_cut_type" class="form-control" id="" placeholder="Jenis" required>
+                
+                  <div class="row">
+                    <div class="col-4">
+                      <label>Jenis Potong<span style="color:red"> *</span></label>
+                      <input type="text" name="men_cut_type" class="form-control" id="" placeholder="Jenis Potong" required>  
+                    </div>
+                    <div class="col-4">
+                      <label>Harga<span style="color:red"> *</span></label>
+                      <input type="text" name="men_price" class="form-control" id="" placeholder="Harga" required>  
+                    </div> 
+                    <div class="col-4">
+                      <label>Stok<span style="color:red"> *</span></label>
+                      <input type="text" name="men_stock" class="form-control" id="" placeholder="Stok" required>
+                    </div>  
                   </div>
-                  <div class="form-group">
-                    <label>Harga<span style="color:red"> *</span></label>
-                    <input type="text" name="men_price" class="form-control" id="" placeholder="Harga" required>
-                  </div>
+                </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="submit" class="btn btn-primary" style="float : right;">Simpan</button>
                 </div>
               </form>
             </div>

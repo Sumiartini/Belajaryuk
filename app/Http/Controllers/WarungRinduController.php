@@ -51,6 +51,7 @@ class WarungRinduController extends Controller
             'men_image' => 'required',
             'men_cut_type' => 'required',
             'men_price' => 'required',
+            'men_stock' => 'required',
         ]);
 
         $nm = $request->men_image;
@@ -60,6 +61,7 @@ class WarungRinduController extends Controller
             $dtUpload->men_image = $namaFile;
             $dtUpload->men_cut_type = $request->men_cut_type;
             $dtUpload->men_price = $request->men_price;
+            $dtUpload->men_stock = $request->men_stock;
 
             $nm->move(public_path().'/assets'.'/images'.'/chicken', $namaFile);
             $dtUpload->save();
@@ -163,6 +165,7 @@ class WarungRinduController extends Controller
 
             'men_cut_type' => 'required',
             'men_price' => 'required',
+            'men_stock' => 'required',
         ]);
         $ubah = Menu::find($menu);
         $image = $request->men_image;
@@ -173,6 +176,7 @@ class WarungRinduController extends Controller
                 'men_image' => $request->men_image->getClientOriginalName(),
                 'men_cut_type' => $request['men_cut_type'],
                 'men_price' => $request['men_price'],
+                'men_stock' => $request['men_stock'],
             ];
     
             $request->men_image->move(public_path().'/assets'.'/images'.'/chicken', $image);
@@ -181,6 +185,7 @@ class WarungRinduController extends Controller
             $dt = [
                 'men_cut_type' => $request['men_cut_type'],
                 'men_price' => $request['men_price'],
+                'men_stock' => $request['men_stock'],
             ];
             $ubah->update($dt);    
         }
