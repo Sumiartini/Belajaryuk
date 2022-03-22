@@ -101,17 +101,25 @@ class WarungRinduController extends Controller
             $customer->cus_name = $data['cus_name'];
             // dd($customer);
             $customer->save();
+            
+             foreach ($data['ord_men_id'] as $item => $value){
+                    $menu = Menu::where('men_id', $data['ord_men_id'][$item])->first();
+                    $stok = $menu->men_stock;
+                    if($stok > $data['ord_quantity'][$item]){
+                        $data2 = array(
+                            'ord_cus_id' => $customer->cus_id,
+                            'ord_men_id' => $data['ord_men_id'][$item],
+                            'ord_quantity' => $data['ord_quantity'][$item],
+                        );
+                        $menu->update(['men_stock' => $stok - $data['ord_quantity'][$item]]);
+                    }else{
+                        return "gagal jumlah beli melebihi stok";
+                    }
 
-            if ($data['ord_men_id'] > 0){
-                foreach ($data['ord_men_id'] as $item => $value){
-                    $data2 = array(
-                        'ord_cus_id' => $customer->cus_id,
-                        'ord_men_id' => $data['ord_men_id'][$item],
-                        'ord_quantity' => $data['ord_quantity'][$item],
-                    );
+
                     Order::create($data2);
                 }
-            }
+           
             
         return redirect ('/list-pesanan')->with('success','Menu Berhasil Ditambah.');
     }
