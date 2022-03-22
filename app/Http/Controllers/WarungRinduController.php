@@ -105,7 +105,7 @@ class WarungRinduController extends Controller
              foreach ($data['ord_men_id'] as $item => $value){
                     $menu = Menu::where('men_id', $data['ord_men_id'][$item])->first();
                     $stok = $menu->men_stock;
-                    if($stok > $data['ord_quantity'][$item]){
+                    if($stok >= $data['ord_quantity'][$item]){
                         $data2 = array(
                             'ord_cus_id' => $customer->cus_id,
                             'ord_men_id' => $data['ord_men_id'][$item],
