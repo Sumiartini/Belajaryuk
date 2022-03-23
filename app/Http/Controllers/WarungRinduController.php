@@ -51,7 +51,7 @@ class WarungRinduController extends Controller
             'men_image' => 'required',
             'men_cut_type' => 'required',
             'men_price' => 'required',
-            'men_stock' => 'required',
+
         ]);
 
         $nm = $request->men_image;
