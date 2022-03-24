@@ -11,7 +11,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Menu</h3>
-                <a href="/list-menu/create" class="btn btn-primary float-right">Tambah</a>
+                <a href="/list-menu/create" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Tambah Menu</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -23,7 +23,7 @@
                       <th>Jenis Potong</th>
                       <th style="width: 200px">Harga</th>
                       <th style="width: 200px">Stok</th>
-                      <th style="width: 20px">Aksi</th>
+                      <th style="width: 100px">Aksi</th>
                     </tr>
                   </thead>
                   @php $no = 1; @endphp
@@ -38,7 +38,8 @@
                       <td>{{$a->men_price}}</td>
                       <td>{{$a->men_stock}}</td>
                       <td>
-                        <a href="/list-menu/{{ $a->men_id }}/edit" class="btn btn-success">Edit</a>
+                        <a href="/list-menu/{{ $a->men_id }}/edit" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>

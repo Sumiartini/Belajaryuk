@@ -112,3 +112,4 @@
   toastr.error("{{ Session::get('error')}}")
   @endif
 </script>
+

@@ -25,8 +25,8 @@
 
                       <div class="col-sm-4">
                           <img class="img-thumbnail" id="tampil_picture" style="object-fit: cover; height: 200px; width: 200px" />
-                          <input type="file" required name="men_image" id="preview_gambar" class="@error('') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg onchange="document.getElementById('men_image').value=this.value" /><br>
-                          @error('')
+                          <input type="file" required name="men_image" id="preview_gambar" class="@error('men_image') is-invalid @enderror" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('men_image').value=this.value" /><br>
+                          @error('men_image')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
                           </p>
@@ -37,11 +37,21 @@
                   <div class="row">
                     <div class="col-4">
                       <label>Jenis Potong<span style="color:red"> *</span></label>
-                      <input type="text" name="men_cut_type" class="form-control" id="" placeholder="Jenis Potong" required>  
+                      <input type="text" name="men_cut_type" class="form-control @error('men_cut_type') is-invalid @enderror" placeholder="Jenis Potong" > 
+                      @error('men_cut_type')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                      @enderror 
                     </div>
                     <div class="col-4">
                       <label>Harga<span style="color:red"> *</span></label>
-                      <input type="text" name="men_price" class="form-control" id="" placeholder="Harga" required>  
+                      <input type="text" name="men_price" class="form-control @error('men_price') is-invalid @enderror" placeholder="Harga" >  
+                      @error('men_price')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                      @enderror
                     </div> 
                     <div class="col-4">
                       <label>Stok</label>
@@ -59,3 +69,4 @@
             <!-- /.card -->
 </section>
 @endsection
+

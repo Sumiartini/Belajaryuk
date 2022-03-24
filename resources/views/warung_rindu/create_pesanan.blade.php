@@ -24,24 +24,39 @@
                 <div class="row"> 
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="">Nama Pelanggan</label>
-                      <input type="text" name="cus_name" class="form-control" id="" placeholder="Masukan Nama">
+                      <label for="">Nama Pelanggan<span style="color:red"> *</span></label>
+                      <input type="text" name="cus_name" class="form-control @error('cus_name') is-invalid @enderror" id="" placeholder="Masukan Nama">
+                      @error('cus_name')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                      @enderror
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-3">
-                      <label for="">Jenis Potong</label>
-                      <select name="ord_men_id[]" class="form-control">
+                      <label for="">Jenis Potong<span style="color:red"> *</span></label>
+                      <select name="ord_men_id[]" class="form-control @error('ord_men_id[]') is-invalid @enderror">
                         <option disabled="true" selected="true"> Pilih Jenis Potong </option>
                         @foreach($menu as $a)
                         <option value="{{$a->men_id}}">{{$a->men_cut_type}}</option>
                         @endforeach
                       </select>
+                      @error('ord_men_id[]')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                      @enderror
                   </div>
                   <div class="col-sm-3">
-                      <label for="">Banyak Beli</label>
-                      <input type="number" placeholder="Masukan Banyak Beli" class="form-control" name="ord_quantity[]"  id="" value="">
+                      <label for="">Banyak Beli<span style="color:red"> *</span></label>
+                      <input type="number" placeholder="Masukan Banyak Beli" class="form-control @error('ord_quantity[]') is-invalid @enderror" name="ord_quantity[]"  id="" value="">
+                      @error('ord_quantity[]')
+                          <p>
+                              <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
+                          </p>
+                      @enderror
                   </div>
                 </div>
 
@@ -69,7 +84,7 @@
       addtypecut();
     });
     function addtypecut(){
-      var order = '<div class="row" style="margin-top : 10px;"><div class="col-sm-3"><label for="">Jenis Potong</label><select name="ord_men_id[]" class="form-control"><option disabled="true" selected="true"> Pilih Jenis Potong </option>@foreach($menu as $a)<option value="{{$a->men_id}}">{{$a->men_cut_type}}</option>@endforeach</select></div><div class="col-sm-3"><label for="">Banyak Beli</label><input type="number" placeholder="Masukan Banyak Beli" class="form-control" name="ord_quantity[]"  id="" value=""></div><a href="#" class="remove text-danger"><div style="margin-top : 40px;"><i class="fas fa-trash"></i></div></a></div>';
+      var order = '<div class="row" style="margin-top : 10px;"><div class="col-sm-3"><label for="">Jenis Potong<span style="color:red"> *</span></label><select name="ord_men_id[]" class="form-control"><option disabled="true" selected="true"> Pilih Jenis Potong </option>@foreach($menu as $a)<option value="{{$a->men_id}}">{{$a->men_cut_type}}</option>@endforeach</select></div><div class="col-sm-3"><label for="">Banyak Beli<span style="color:red"> *</span></label><input type="number" placeholder="Masukan Banyak Beli" class="form-control" name="ord_quantity[]"  id="" value=""></div><a href="#" class="remove text-danger"><div style="margin-top : 40px;"><i class="fas fa-trash"></i></div></a></div>';
       $('.order').append(order);
     };
     $('.remove').live('click', function(){

@@ -32,7 +32,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$a->cus_name}}</td>
                         <td>
-                          <a href="/list-pesanan/{{$a->cus_id}}" class="btn btn-primary">Detail</a>
+                          <a href="/list-pesanan/{{$a->cus_id}}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fas  fa-info-circle"></i></a>
                         </td>
                       </tr>
                     </tbody>
