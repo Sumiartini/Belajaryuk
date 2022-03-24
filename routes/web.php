@@ -44,6 +44,7 @@ Route::group(['middleware' => 'prevent-back-history','auth'],function(){
 
     Route::get('/list-menu/{menu}/edit', 'WarungRinduController@edit');
     Route::post('/list-menu/{menu}/edit', 'WarungRinduController@update');
+    Route::delete('/list-menu/{menu}', 'WarungRinduController@destroy');
 
     // Fitur Pesanan
     Route::get('/list-pesanan', 'WarungRinduController@pesanan');

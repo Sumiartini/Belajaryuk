@@ -207,8 +207,9 @@ class WarungRinduController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        //
+        Menu::destroy($menu->men_id);
+        return back()->with('error','Menu berhasil dihapus');
     }
 }

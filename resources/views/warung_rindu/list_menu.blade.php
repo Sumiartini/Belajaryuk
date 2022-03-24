@@ -39,7 +39,11 @@
                       <td>{{$a->men_stock}}</td>
                       <td>
                         <a href="/list-menu/{{ $a->men_id }}/edit" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fas fa-trash"></i></a>
+                        <form action="/list-menu/{{ $a->men_id }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fas fa-trash"></i></a>
+                        </form>
                       </td>
                     </tr>
                   </tbody>
