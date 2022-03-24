@@ -43,8 +43,8 @@
                       <input type="text" value="{{ $menu->men_price }}" name="men_price" class="form-control" id="" placeholder="Harga" required>  
                     </div> 
                     <div class="col-4">
-                      <label>Stok<span style="color:red"> *</span></label>
-                      <input type="text" value="{{ $menu->men_stock }}" name="men_stock" class="form-control" id="" placeholder="Stok" required>
+                      <label>Stok</label>
+                      <input type="text" value="{{ $menu->men_stock }}" name="men_stock" class="form-control" id="" placeholder="Stok">
                     </div>  
                   </div>
 

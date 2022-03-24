@@ -178,6 +178,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+       
+
+
     ],
 
     /*
@@ -232,6 +235,8 @@ return [
 
         //datalain
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+
 
     ],
 

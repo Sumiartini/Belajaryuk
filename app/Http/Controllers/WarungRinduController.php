@@ -121,7 +121,7 @@ class WarungRinduController extends Controller
                 }
            
             
-        return redirect ('/list-pesanan')->with('success','Menu Berhasil Ditambah.');
+        return redirect ('/list-pesanan')->with('success','Pesanan Berhasil Ditambah.');
     }
 
     public function show($id)
@@ -198,7 +198,7 @@ class WarungRinduController extends Controller
             $ubah->update($dt);    
         }
 
-        return redirect ('/list-menu')->with('status','berhasil diubah');
+        return redirect('/list-menu')->with('success', 'Menu berhasil diubah');
     }
 
     /**
