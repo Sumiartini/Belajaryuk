@@ -117,11 +117,11 @@ class WarungRinduController extends Controller
                     }
 
 
-                    Order::create($data2);
+                    $order = Order::create($data2);
                 }
            
-            
-        return redirect ('/list-pesanan')->with('success','Pesanan Berhasil Ditambah.');
+            // dd ($order);
+        return redirect ('/list-pesanan/'. $order->ord_cus_id)->with('success','Pesanan Berhasil Ditambah.');
     }
 
     public function show($id)
