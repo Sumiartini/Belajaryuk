@@ -25,7 +25,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="">Nama Pelanggan<span style="color:red"> *</span></label>
-                      <input type="text" name="cus_name" class="form-control @error('cus_name') is-invalid @enderror" id="" placeholder="Masukan Nama">
+                      <input type="text" name="cus_name" value="{{ old('cus_name') }}" class="form-control @error('cus_name') is-invalid @enderror" id="" placeholder="Masukan Nama">
                       @error('cus_name')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>

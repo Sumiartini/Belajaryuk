@@ -37,7 +37,7 @@
                   <div class="row">
                     <div class="col-4">
                       <label>Jenis Potong<span style="color:red"> *</span></label>
-                      <input type="text" name="men_cut_type" class="form-control @error('men_cut_type') is-invalid @enderror" placeholder="Jenis Potong" > 
+                      <input type="text" name="men_cut_type" value="{{ old('men_cut_type') }}" class="form-control @error('men_cut_type') is-invalid @enderror" placeholder="Jenis Potong" > 
                       @error('men_cut_type')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-4">
                       <label>Harga<span style="color:red"> *</span></label>
-                      <input type="text" name="men_price" class="form-control @error('men_price') is-invalid @enderror" placeholder="Harga" >  
+                      <input type="number" name="men_price" value="{{ old('men_price') }}" class="form-control @error('men_price') is-invalid @enderror" placeholder="Harga" >  
                       @error('men_price')
                           <p>
                               <strong style="font-size: 80%;color: #dc3545;">{{$message}}</strong>
@@ -55,7 +55,7 @@
                     </div> 
                     <div class="col-4">
                       <label>Stok</label>
-                      <input type="text" name="men_stock" class="form-control" id="" placeholder="Stok">
+                      <input type="number" name="men_stock" value="{{ old('men_stock') }}" class="form-control" id="" placeholder="Stok">
                     </div>  
                   </div>
                 </div>
