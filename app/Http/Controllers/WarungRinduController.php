@@ -113,7 +113,7 @@ class WarungRinduController extends Controller
                         );
                         $menu->update(['men_stock' => $stok - $data['ord_quantity'][$item]]);
                     }else{
-                        return "gagal jumlah beli melebihi stok";
+                        return back()->with('error','Banyak beli melebihi stok tersedia');
                     }
 
 
