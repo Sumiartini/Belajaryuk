@@ -175,7 +175,12 @@ class WarungRinduController extends Controller
             'men_price' => 'required',
             'men_stock' => 'required',
         ]);
+        
         $ubah = Menu::find($menu);
+        $cek = Order::where('ord_men_id',$menu)->count();
+        if($cek != 0){
+            return back()->with('error','Menu tidak bisa diubah');
+        }
         $image = $request->men_image;
         if($image)
         {
@@ -208,7 +213,11 @@ class WarungRinduController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Menu $menu)
-    {
+    {   
+        $cek = Order::where('ord_men_id',$menu->men_id)->count();
+        if($cek != 0){
+            return back()->with('error','Menu tidak bisa dihapus');
+        }
         Menu::destroy($menu->men_id);
         return back()->with('error','Menu berhasil dihapus');
     }
