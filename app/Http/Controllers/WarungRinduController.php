@@ -169,6 +169,7 @@ class WarungRinduController extends Controller
      */
     public function update(Request $request, $menu)
     {
+        // dd($menu);
         $validatedData = $request->validate([
 
             'men_cut_type' => 'required',
@@ -214,11 +215,13 @@ class WarungRinduController extends Controller
      */
     public function destroy(Menu $menu)
     {   
+        // dd($menu);
         $cek = Order::where('ord_men_id',$menu->men_id)->count();
         if($cek != 0){
             return back()->with('error','Menu tidak bisa dihapus');
         }
         Menu::destroy($menu->men_id);
+        
         return back()->with('error','Menu berhasil dihapus');
     }
 }
